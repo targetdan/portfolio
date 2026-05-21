@@ -1,7 +1,7 @@
 import Nav from "@/components/Nav";
 import styles from "../page.module.css";
 
-export const metadata = { title: "Woodworking — Dan Church-Wilsher" };
+export const metadata = { title: "Woodworking - Dan Church-Wilsher" };
 
 export default function WoodworkingPage() {
   return (

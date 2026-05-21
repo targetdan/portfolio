@@ -14,7 +14,7 @@ export const cv = {
       title: "Lead Developer",
       company: "360GlobalNet",
       location: "Remote",
-      period: "2022 — Present",
+      period: "2022 - Present",
       responsibilities: [
         "Provide hands-on technical leadership across architecture, implementation, code quality, and agile engineering practices",
         "Design, develop and maintain SaaS features",
@@ -37,7 +37,7 @@ export const cv = {
       title: "Senior .NET Developer",
       company: "360GlobalNet",
       location: "St Albans",
-      period: "2018 — 2022",
+      period: "2018 - 2022",
       responsibilities: [
         "Design and implement microservices",
         "Support & maintain a .NET monolith",
@@ -58,7 +58,7 @@ export const cv = {
       title: "IT and Software Development Manager",
       company: "The Professional Fundraiser",
       location: "Hitchin",
-      period: "2015 — 2018",
+      period: "2015 - 2018",
       responsibilities: [
         "Develop an internal web-app for managing charity fundraising & event booking",
         "Build & maintain all computer hardware",

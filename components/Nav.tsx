@@ -6,7 +6,7 @@ import { openEmail } from "@/lib/contact";
 import styles from "./Nav.module.css";
 
 const links = [
-  { href: "/woodworking", label: "Woodworking" },
+  // { href: "/woodworking", label: "Woodworking" },
   { href: "/computational-geometry", label: "Computational Geometry" },
 ];
 
