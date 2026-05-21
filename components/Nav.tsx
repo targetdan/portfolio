@@ -2,6 +2,7 @@
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { openEmail } from "@/lib/contact";
 import styles from "./Nav.module.css";
 
 const links = [
@@ -35,9 +36,9 @@ export default function Nav() {
             </li>
           ))}
         </ul>
-        <a href="mailto:danielwilsher@hotmail.co.uk" className={styles.cta}>
+        <button onClick={openEmail} className={styles.cta}>
           Get in touch
-        </a>
+        </button>
       </div>
     </nav>
   );

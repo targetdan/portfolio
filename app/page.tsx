@@ -29,7 +29,7 @@ export default function Home() {
             </aside>
           </div>
           <div className={styles.contactWrap}>
-            <Contact contact={cv.contact} location={cv.location} />
+            <Contact />
           </div>
         </div>
       </div>
