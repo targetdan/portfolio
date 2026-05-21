@@ -12,7 +12,7 @@ export default function Hero({ cv }: Props) {
             Available for hire
           </div>
           <h1 className={`${styles.name} animate-fade-up delay-100`}>
-            {cv.name.first} <span>{cv.name.last.split("-")[0]}-</span>{cv.name.last.split("-")[1]}
+            {cv.name.first} <span>{cv.name.last}</span>
           </h1>
           <p className={`${styles.role} animate-fade-up delay-200`}>{cv.role}</p>
           <p className={`${styles.summary} animate-fade-up delay-300`}>{cv.summary}</p>
@@ -25,24 +25,11 @@ export default function Hero({ cv }: Props) {
         <div className={`${styles.card} animate-fade-in delay-300`}>
           <div className={styles.avatar}>DW</div>
           <div className={styles.divider} />
-          <div className={styles.contactList}>
-            <a href={`mailto:${cv.contact.email}`} className={styles.contactItem}>
-              <i className="ti ti-mail" aria-hidden="true" />
-              {cv.contact.email}
-            </a>
-            <a href={`tel:${cv.contact.phone.replace(/\s/g, "")}`} className={styles.contactItem}>
-              <i className="ti ti-phone" aria-hidden="true" />
-              {cv.contact.phone}
-            </a>
-            <span className={styles.contactItem}>
-              <i className="ti ti-brand-github" aria-hidden="true" />
-              {cv.contact.github}
-            </span>
+          <div className={styles.degreeBlock}>
+            <p className={styles.degreeHons}>First Class BSc (Hons)</p>
+            <p className={styles.degreeTitle}>Mathematics &amp; Computing</p>
+            <p className={styles.degreeInst}>University of Hertfordshire</p>
           </div>
-          <div className={styles.divider} />
-          <span className={styles.contactItem} style={{ fontSize: "11px", lineHeight: "1.65", color: "rgba(148,163,184,0.7)" }}>
-            1st Class BSc<br />Maths &amp; Computing<br />Univ. of Hertfordshire
-          </span>
         </div>
       </div>
     </header>
