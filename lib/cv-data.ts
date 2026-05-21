@@ -8,7 +8,7 @@ export const cv = {
   yearsExp: "12+",
   contact: {
     email: "danielwilsher@hotmail.co.uk",
-    phone: "07538 684 219",
+    phone: "07538684219",
     github: "targetdan",
   },
   experience: [

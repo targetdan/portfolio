@@ -30,6 +30,12 @@
   position: relative;
   z-index: 1;
 }
+@media (min-width: 1280px) {
+  .grid { max-width: 1040px; grid-template-columns: 1fr 240px; }
+}
+@media (min-width: 1600px) {
+  .grid { max-width: 1240px; grid-template-columns: 1fr 280px; }
+}
 .badge {
   display: inline-flex;
   align-items: center;

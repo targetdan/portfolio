@@ -1,17 +1,17 @@
 "use client";
 import { useState, useEffect } from "react";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
 import styles from "./Nav.module.css";
 
 const links = [
-  { href: "#employment", label: "Employment" },
-  { href: "#skills", label: "Skills" },
-  { href: "#education", label: "Education" },
-  { href: "#interests", label: "Interests" },
+  { href: "/woodworking", label: "Woodworking" },
+  { href: "/computational-geometry", label: "Computational Geometry" },
 ];
 
 export default function Nav() {
   const [scrolled, setScrolled] = useState(false);
-  const [active, setActive] = useState("");
+  const pathname = usePathname();
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 60);
@@ -19,33 +19,19 @@ export default function Nav() {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
-  useEffect(() => {
-    const sections = links.map((l) => document.querySelector(l.href));
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((e) => {
-          if (e.isIntersecting) setActive(`#${e.target.id}`);
-        });
-      },
-      { rootMargin: "-40% 0px -55% 0px" }
-    );
-    sections.forEach((s) => s && observer.observe(s));
-    return () => observer.disconnect();
-  }, []);
-
   return (
     <nav className={`${styles.nav} ${scrolled ? styles.scrolled : ""} animate-fade-in`}>
       <div className={styles.inner}>
-        <span className={styles.logo}>Dan <span>Church-Wilsher</span></span>
+        <Link href="/" className={styles.logo}>Dan <span>Church-Wilsher</span></Link>
         <ul className={styles.links}>
           {links.map((l) => (
             <li key={l.href}>
-              <a
+              <Link
                 href={l.href}
-                className={`${styles.link} ${active === l.href ? styles.active : ""}`}
+                className={`${styles.link} ${pathname === l.href ? styles.active : ""}`}
               >
                 {l.label}
-              </a>
+              </Link>
             </li>
           ))}
         </ul>
