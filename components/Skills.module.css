@@ -1,0 +1,28 @@
+.group + .group { margin-top: 1rem; }
+.groupLabel {
+  font-family: var(--font-display);
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--slate-400);
+  margin-bottom: 0.5rem;
+}
+.list { display: flex; flex-direction: column; gap: 5px; }
+.skill {
+  font-size: 12px;
+  color: var(--slate-600);
+  font-weight: 400;
+  padding: 5px 11px;
+  border-radius: var(--radius-sm);
+  background: var(--slate-50);
+  border: 1px solid var(--slate-200);
+  transition: border-color 0.2s, background 0.2s;
+}
+.skill:hover { border-color: var(--blue-border); background: var(--blue-light); color: var(--blue-deeper); }
+.core {
+  background: var(--blue-light);
+  color: var(--blue-deeper);
+  font-weight: 500;
+  border-color: var(--blue-border);
+}

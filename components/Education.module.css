@@ -1,0 +1,40 @@
+.degree {
+  font-family: var(--font-display);
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--slate-900);
+  margin-bottom: 3px;
+  line-height: 1.4;
+}
+.institution {
+  font-size: 12px;
+  color: var(--blue);
+  font-weight: 500;
+  margin-bottom: 3px;
+}
+.period {
+  font-size: 11px;
+  color: var(--slate-400);
+  font-weight: 300;
+  margin-bottom: 0.9rem;
+}
+.modulesLabel {
+  font-family: var(--font-display);
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--slate-400);
+  margin-bottom: 0.4rem;
+}
+.module {
+  font-size: 11px;
+  color: var(--slate-600);
+  font-weight: 300;
+  padding: 4px 10px;
+  border-left: 2px solid var(--blue);
+  background: var(--blue-light);
+  border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+  margin-bottom: 4px;
+  display: block;
+}

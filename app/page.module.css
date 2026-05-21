@@ -1,0 +1,40 @@
+.navWrap {
+  background: var(--navy);
+}
+.pageWrap {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+.body {
+  background: #fff;
+  border: 0.5px solid #e2e8f0;
+  border-top: none;
+  border-radius: 0 0 14px 14px;
+  padding: 2.5rem 2.5rem 3rem;
+  margin-bottom: 2rem;
+}
+.bodyGrid {
+  display: grid;
+  grid-template-columns: 1fr 200px;
+  gap: 0 2.5rem;
+}
+.mainCol {
+  min-width: 0;
+}
+.sideCol {
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+  min-width: 0;
+}
+.contactWrap {
+  margin-top: 2.5rem;
+  padding-top: 2.5rem;
+  border-top: 1px solid var(--slate-100);
+}
+@media (max-width: 640px) {
+  .bodyGrid { grid-template-columns: 1fr; }
+  .body { padding: 2rem 1.25rem 2.5rem; border-radius: 0 0 10px 10px; }
+  .pageWrap { padding: 0 1rem; }
+}
