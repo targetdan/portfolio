@@ -7,10 +7,6 @@ export default function Hero({ cv }: Props) {
     <header className={styles.hero}>
       <div className={styles.grid}>
         <div>
-          <div className={`${styles.badge} animate-fade-up`}>
-            <span className={styles.badgeDot} />
-            Available for hire
-          </div>
           <h1 className={`${styles.name} animate-fade-up delay-100`}>
             {cv.name.first} <span>{cv.name.last}</span>
           </h1>
