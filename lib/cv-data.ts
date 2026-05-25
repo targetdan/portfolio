@@ -2,10 +2,10 @@ export const cv = {
   name: { first: "Dan", last: "Church-Wilsher" },
   role: "Lead Developer · .NET & Cloud",
   summary:
-    "Highly experienced .NET engineer with 12+ years designing performant C# libraries and cloud systems, with a mathematical background (BSc Mathematics & Computing) in data structures and algorithms. Proven track record of delivering projects on-time, leading a dev team and designing scalable cloud architecture. Seeking to further develop my expertise in all things .NET and AI.",
+    "Highly experienced .NET engineer with 11+ years designing performant C# libraries and cloud systems, with a mathematical background (BSc Mathematics & Computing) in data structures and algorithms. Proven track record of delivering projects on-time, leading a dev team and designing scalable cloud architecture. Seeking to further develop my expertise in all things .NET and AI.",
   location: "Hemel Hempstead",
   availability: "Remote / Hybrid",
-  yearsExp: "12+",
+  yearsExp: "11+",
   contact: {
     email: "danielwilsher@hotmail.co.uk",
   },

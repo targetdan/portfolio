@@ -47,9 +47,19 @@ export default function ConvexHullDemo() {
       <div className={styles.demo}>
         {/* 3D viewer */}
         <div className={styles.viewer}>
-          <ConvexHullScene step={step} points={DEMO_POINTS} />
+          <div className={styles.canvasWrap}>
+            <ConvexHullScene step={step} points={DEMO_POINTS} />
+          </div>
 
           <div className={styles.controls}>
+            <button
+              className={`${styles.btn} ${styles.btnReset}`}
+              disabled={current === 0}
+              onClick={() => setCurrent(0)}
+              title="Reset to first step"
+            >
+              ↺
+            </button>
             <button
               className={styles.btn}
               disabled={current === 0}

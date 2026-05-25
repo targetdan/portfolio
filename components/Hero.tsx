@@ -19,7 +19,7 @@ export default function Hero({ cv }: Props) {
           </div>
         </div>
         <div className={`${styles.card} animate-fade-in delay-300`}>
-          <div className={styles.avatar}>DW</div>
+          <div className={styles.avatar}>DCW</div>
           <div className={styles.divider} />
           <div className={styles.degreeBlock}>
             <p className={styles.degreeHons}>First Class BSc (Hons)</p>

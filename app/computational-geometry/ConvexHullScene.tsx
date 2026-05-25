@@ -169,7 +169,7 @@ export default function ConvexHullScene({ step, points }: { step: AlgorithmStep;
   return (
     <Canvas
       camera={{ position: [20, 16, 22], fov: 40, near: 0.1, far: 200 }}
-      style={{ background: "#060d1a", height: "900px", width: "100%" }}
+      style={{ background: "#060d1a", height: "100%", width: "100%", display: "block" }}
       gl={{ antialias: true, alpha: false }}
     >
       <Scene step={step} points={points} />

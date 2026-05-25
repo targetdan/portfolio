@@ -4,7 +4,7 @@ import "./globals.css";
 export const metadata: Metadata = {
   title: "Dan Church-Wilsher - Lead Developer",
   description:
-    "CV of Dan Church-Wilsher, Lead .NET & Cloud Developer with 12+ years experience building scalable systems.",
+    "CV of Dan Church-Wilsher, Lead .NET & Cloud Developer with 11+ years experience building scalable systems.",
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {

@@ -21,40 +21,48 @@
   max-width: 720px;
 }
 
+/* ── Main demo grid ── */
 .demo {
   display: grid;
-  grid-template-columns: 1fr 360px;
+  grid-template-columns: 1fr 300px;
   align-items: stretch;
   border-radius: var(--radius-lg);
   overflow: hidden;
   border: 1px solid var(--slate-200);
-  height: 900px;
+  /* Responsive height: at least 480px, scales with viewport, capped at 760px */
+  height: clamp(480px, 72vh, 760px);
 }
+@media (min-width: 1080px) { .demo { grid-template-columns: 1fr 360px; } }
+@media (min-width: 1280px) { .demo { grid-template-columns: 1fr 420px; } }
 
+/* ── 3D Viewer (flex column so canvas grows and controls sit at the bottom) ── */
 .viewer {
-  position: relative;
   background: #060d1a;
-  height: 900px;
-}
-
-.viewerCanvas {
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+  min-width: 0;
   width: 100%;
-  height: 100%;
 }
 
+/* Canvas fills all remaining space above the controls bar */
+.canvasWrap {
+  flex: 1;
+  min-height: 0;
+}
+
+/* ── Controls bar — always pinned to the bottom of the viewer ── */
 .controls {
-  position: absolute;
-  bottom: 1.25rem;
-  left: 50%;
-  transform: translateX(-50%);
+  flex-shrink: 0;
+  width: 100%;
+  box-sizing: border-box;
   display: flex;
   align-items: center;
+  justify-content: center;
   gap: 0.75rem;
-  background: rgba(10, 15, 30, 0.85);
-  backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  border-radius: var(--radius-full);
-  padding: 0.5rem 1.25rem;
+  background: rgba(6, 13, 26, 0.95);
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  padding: 0.6rem 1.25rem;
   white-space: nowrap;
 }
 
@@ -79,6 +87,10 @@
 .btn:disabled {
   opacity: 0.3;
   cursor: not-allowed;
+}
+.btnReset {
+  padding: 5px 10px;
+  font-size: 13px;
 }
 
 .stepCounter {
@@ -105,13 +117,15 @@
   transition: width 0.3s ease;
 }
 
-/* Info panel */
+/* ── Info panel ── */
 .panel {
   background: #0a0f1e;
   border-left: 1px solid rgba(255, 255, 255, 0.07);
   display: flex;
   flex-direction: column;
-  overflow: hidden;
+  overflow-y: auto;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(255, 255, 255, 0.1) transparent;
 }
 
 .panelInner {
@@ -137,10 +151,10 @@
   border-radius: var(--radius-full);
   border: 1px solid;
 }
-.phase-init    { color: #22d3ee; border-color: rgba(34,211,238,0.3); background: rgba(34,211,238,0.08); }
-.phase-tetrahedron { color: #a78bfa; border-color: rgba(167,139,250,0.3); background: rgba(167,139,250,0.08); }
-.phase-expand  { color: #f97316; border-color: rgba(249,115,22,0.3); background: rgba(249,115,22,0.08); }
-.phase-complete { color: #10b981; border-color: rgba(16,185,129,0.3); background: rgba(16,185,129,0.08); }
+.phase-init         { color: #22d3ee; border-color: rgba(34,211,238,0.3); background: rgba(34,211,238,0.08); }
+.phase-tetrahedron  { color: #a78bfa; border-color: rgba(167,139,250,0.3); background: rgba(167,139,250,0.08); }
+.phase-expand       { color: #f97316; border-color: rgba(249,115,22,0.3); background: rgba(249,115,22,0.08); }
+.phase-complete     { color: #10b981; border-color: rgba(16,185,129,0.3); background: rgba(16,185,129,0.08); }
 
 .stepNum {
   font-size: 10px;
@@ -236,17 +250,70 @@
   flex-shrink: 0;
 }
 
+/* ── Responsive breakpoints ── */
+
+/* Tablet: collapse to single column, viewer shrinks */
 @media (max-width: 900px) {
   .demo {
     grid-template-columns: 1fr;
     height: auto;
   }
   .viewer {
-    height: 400px;
+    height: clamp(300px, 52vw, 500px);
   }
   .panel {
     border-left: none;
     border-top: 1px solid rgba(255, 255, 255, 0.07);
-    max-height: 380px;
+    max-height: 420px;
+  }
+}
+
+/* Mobile portrait: tighter viewer, smaller controls */
+@media (max-width: 540px) and (orientation: portrait) {
+  .viewer {
+    height: clamp(260px, 70vw, 360px);
+  }
+  .controls {
+    gap: 0.5rem;
+    padding: 0.5rem 0.75rem;
+  }
+  .stepCounter {
+    min-width: 60px;
+  }
+  .progress {
+    width: 40px;
+  }
+  .panelInner {
+    padding: 1.25rem 1rem;
+  }
+}
+
+/* Small mobile landscape: restore side-by-side so the panel stays visible */
+@media (orientation: landscape) and (max-height: 500px) {
+  .demo {
+    grid-template-columns: 1fr 200px;
+    height: clamp(240px, 88vh, 380px);
+  }
+  .viewer {
+    height: auto;
+  }
+  .panel {
+    border-left: 1px solid rgba(255, 255, 255, 0.07);
+    border-top: none;
+    max-height: none;
+  }
+  .panelInner {
+    padding: 1rem;
+    gap: 0.75rem;
+  }
+  .controls {
+    gap: 0.5rem;
+    padding: 0.5rem 0.75rem;
+  }
+  .stepCounter {
+    min-width: 56px;
+  }
+  .progress {
+    width: 36px;
   }
 }
