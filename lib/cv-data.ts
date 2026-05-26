@@ -1,6 +1,6 @@
-export const cv = {
+﻿export const cv = {
   name: { first: "Dan", last: "Church-Wilsher" },
-  role: "Lead Developer · .NET & Cloud",
+  role: "Lead Developer|.NET & Cloud",
   summary:
     "Highly experienced .NET engineer with 11+ years designing performant C# libraries and cloud systems, with a mathematical background (BSc Mathematics & Computing) in data structures and algorithms. Proven track record of delivering projects on-time, leading a dev team and designing scalable cloud architecture. Seeking to further develop my expertise in all things .NET and AI.",
   location: "Hemel Hempstead",
@@ -85,5 +85,5 @@ export const cv = {
     modules: ["Data Structures and Algorithms","Matrices","Advanced Calculus","Linear Programming"],
   },
   interests:
-    "I am a keen gamer. I enjoy running to keep fit and completed my first half-marathon this year. I also enjoy woodworking and have designed projects using 3D modelling software, followed by time in the shed to bring them to life!",
+    "I am a keen gamer. I enjoy running to keep fit and completed my first half-marathon this year. As an amateur kickboxer I achieved yellow belt last year and also competed in 2 categories at the Peterborough Championship Series. I also enjoy woodworking and have designed projects using 3D modelling software, followed by time in the shed to bring them to life!",
 };

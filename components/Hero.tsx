@@ -10,7 +10,11 @@ export default function Hero({ cv }: Props) {
           <h1 className={`${styles.name} animate-fade-up delay-100`}>
             {cv.name.first} <span>{cv.name.last}</span>
           </h1>
-          <p className={`${styles.role} animate-fade-up delay-200`}>{cv.role}</p>
+          <p className={`${styles.role} animate-fade-up delay-200`}>
+            {cv.role.split("|").map((part: string, i: number) => (
+              <span key={i}>{part}</span>
+            ))}
+          </p>
           <p className={`${styles.summary} animate-fade-up delay-300`}>{cv.summary}</p>
           <div className={`${styles.tags} animate-fade-up delay-400`}>
             <span className={styles.tag}>{cv.location}</span>

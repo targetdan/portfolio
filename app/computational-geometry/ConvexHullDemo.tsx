@@ -39,8 +39,10 @@ export default function ConvexHullDemo() {
           The following demonstration steps through the QuickHull algorithm applied to a synthetic
           LiDAR point cloud representing a building survey. QuickHull is the algorithm at the
           core of Qhull - the computational geometry library used in AutoCAD, MATLAB, SciPy, and
-          many professional BIM toolchains. Click <em>Next</em> to advance through each stage.
-          The model is interactive, feel free to rotate and zoom!
+          many professional BIM toolchains.
+        </p>
+        <p className={`${styles.introText} ${styles.introHint}`}>
+          Click <em>Next</em> to advance through each stage. The model is interactive, feel free to rotate and zoom!
         </p>
       </div>
 

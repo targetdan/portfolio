@@ -10,6 +10,10 @@ const links = [
   { href: "/computational-geometry", label: "Computational Geometry" },
 ];
 
+const mobileOnlyLinks = [
+  { href: "/", label: "CV" },
+];
+
 export default function Nav() {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
@@ -79,7 +83,7 @@ export default function Nav() {
         aria-hidden={!menuOpen}
       >
         <ul className={styles.drawerLinks}>
-          {links.map((l) => (
+          {[...mobileOnlyLinks, ...links].map((l) => (
             <li key={l.href}>
               <Link
                 href={l.href}

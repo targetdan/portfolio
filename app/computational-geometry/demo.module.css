@@ -20,6 +20,9 @@
   line-height: 1.7;
   max-width: 720px;
 }
+.introHint {
+  padding-top: 1.25rem;
+}
 
 /* ── Main demo grid ── */
 .demo {
